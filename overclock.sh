@@ -163,44 +163,20 @@ restore_Xwrapper_config() {
 usage() {
 cat << EOF
 Usage:
-  nvidia-overclock.sh [COMMAND]
-Description:
-  This script manages simple overclocking of NVIDIA Graphics cards on Linux.
-  To use it, please perform the following steps:
-  (1) Update the values in the overclock() function with values for your GPUs.
-  (2) Install the script by changing to its directory and running:
-
-      ./nvidia-overclock.sh install-svc -x
-      This will install the service and use "startx" to automatically start
-      XWindows.  If you already have XWindows installed and configured to run
-      automatically on boot, then omit the -x option.
-
-      ./nvidia-overclock.sh install-svc
-
-  (3) Reboot the system and XWindows should start automatically with your GPUs
-      set to the specified overclocked values.
-
-  For the full documentation and detailed requirements, please read the
-  accompanying README.md file.
+  overclock.sh [COMMAND]
 Commands:
   overclock
-    Set the overclock values for the graphics card(s) defined in the overclock
-    function.  No check is performed to verify if XWindows is running or if
-    logging is enabled.
+    It overclock your graphics card(s)
   auto [-l] [-x]
-    Check that XWindows is started if the -x is passed.  If XWindows is
-    started, then set the overclock values for the graphics cards(s) defined in
-    the overclock function.  If -l is passed, then output will be logged to the
-    file specified by LOG_FILE.
+    -l logs everything
+    -x checks if Xorg is working
   install-svc [-x]
-    Creates a systemd service to overclock the cards, installs, and enables it.
-    If the -x option is passed, then it will create a custom Xwrapper.config
-    file, so that "startx" can be used to automatically start XWindows on boot.
+    Makes a soystemd service to overclock the card(s)
   uninstall-svc
-    Removes the systemd service and restores the original Xwrapper.config file
+    Removes the soystemd service
     if it previously existed.
   help|--help|usage|--usage|?
-    Display this help message.
+    Shows this message
 EOF
 }
 
