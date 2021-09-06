@@ -173,8 +173,7 @@ Commands:
   install-svc [-x]
     Makes a soystemd service to overclock the card(s)
   uninstall-svc
-    Removes the soystemd service
-    if it previously existed.
+    Removes the soystemd service if it already exists
   help|--help|usage|--usage|?
     Shows this message
 EOF
